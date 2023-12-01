@@ -1,7 +1,7 @@
 import { swagger } from "@elysiajs/swagger";
-import { Elysia } from 'elysia';
+import { Elysia } from "elysia";
 import { html } from "@elysiajs/html";
-import { staticPlugin } from '@elysiajs/static'
+import { staticPlugin } from "@elysiajs/static";
 import * as elements from "typed-html";
 // import { date } from "drizzle-orm/mysql-core";
 import { Nav } from "./components/nav";
@@ -27,28 +27,36 @@ type Post = {
   content: string;
   publisheed: boolean;
   date: string;
-}
+};
 
 const db: Post[] = [
-  { id: 1, title: 'Brand new stack!', content: 'Hello World', publisheed: true, date: new Date().toLocaleString() },
-  { id: 2, title: 'Brand new site', content: 'Hello World', publisheed: true, date: new Date().toLocaleString() },
+  {
+    id: 1,
+    title: "Brand new stack!",
+    content: "Hello World",
+    publisheed: true,
+    date: new Date().toLocaleString(),
+  },
+  {
+    id: 2,
+    title: "Brand new site",
+    content: "Hello World",
+    publisheed: true,
+    date: new Date().toLocaleString(),
+  },
 ];
 
 const PostItem = ({ post }: { post: Post }) => {
-    <div>
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
-      <p>{post.date}</p>
-      <p>{post.publisheed ? 'Published' : 'Not published'}</p>
-    </div>
-}
+  <div>
+    <h1>{post.title}</h1>
+    <p>{post.content}</p>
+    <p>{post.date}</p>
+    <p>{post.publisheed ? "Published" : "Not published"}</p>
+  </div>;
+};
 
 const PORT = 3000;
-const app = new Elysia()
-                .use(html())
-                .use(staticPlugin())
-                .use(swagger());
-
+const app = new Elysia().use(html()).use(staticPlugin()).use(swagger());
 
 app.get("/", ({ html }) => {
   return html(
@@ -59,9 +67,9 @@ app.get("/", ({ html }) => {
       </body>
     </Template>
   );
-})
+});
 
-app.post('/test', ({html}) => {
+app.post("/test", ({ html }) => {
   return html(
     <Template>
       <body>
@@ -69,16 +77,11 @@ app.post('/test', ({html}) => {
       </body>
     </Template>
   );
-})
-
-
-
-
-
-
-
+});
 
 app.listen(PORT);
 console.log(
-  `Elysia is running at http://${app.server?.hostname}:${app.server?.port}, updated on ${new Date().toLocaleString()}`
-)
+  `Elysia is running at http://${app.server?.hostname}:${
+    app.server?.port
+  }, updated on ${new Date().toLocaleString()}`
+);
