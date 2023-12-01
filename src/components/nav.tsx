@@ -34,7 +34,7 @@ export const Nav = () => {
         return (
           <a
             href={page.path}
-            class="hover:bg-slate-500 text-white text-md py-1 px-1 rounded"
+            class="hover:bg-slate-500 text-gray-400 text-md py-1 px-1 rounded"
           >
             {page.title}
           </a>
