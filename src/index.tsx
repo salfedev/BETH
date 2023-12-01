@@ -1,12 +1,15 @@
 import { swagger } from "@elysiajs/swagger";
 import { Elysia } from 'elysia';
 import { html } from "@elysiajs/html";
+import { staticPlugin } from '@elysiajs/static'
 import * as elements from "typed-html";
-import { date } from "drizzle-orm/mysql-core";
+// import { date } from "drizzle-orm/mysql-core";
+import { Nav } from "./components/nav";
+import { HomePage } from "./templates/home";
 
 const Template = ({ children }: elements.Children) => {
   return `
-        <html>
+        <html class="h-full">
             <head>
                 <title>BETH</title>
                 <script src="https://unpkg.com/htmx.org@1.9.3" integrity="sha384-lVb3Rd/Ca0AxaoZg5sACe8FJKF0tnUgR2Kd7ehUOG5GCcROv5uBIZsOqovBAcWua" crossorigin="anonymous"></script>
@@ -43,17 +46,16 @@ const PostItem = ({ post }: { post: Post }) => {
 const PORT = 3000;
 const app = new Elysia()
                 .use(html())
+                .use(staticPlugin())
                 .use(swagger());
 
 
 app.get("/", ({ html }) => {
   return html(
     <Template>
-      <body>
-        <p>Hello World</p>
-        <button hx-post="/test" hx-swap="outerHTML">
-          Click me
-        </button>
+      <body class="h-full">
+        <Nav />
+        <HomePage />
       </body>
     </Template>
   );
