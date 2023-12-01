@@ -7,6 +7,8 @@ import * as elements from "typed-html";
 import { Nav } from "./components/nav";
 import { HomePage } from "./templates/home";
 
+import { db } from "./db/db";
+
 const Template = ({ children }: elements.Children) => {
   return `
         <html class="h-full">
@@ -20,40 +22,6 @@ const Template = ({ children }: elements.Children) => {
         </html>
     `;
 };
-
-type Post = {
-  id: number;
-  name: string;
-  type: string;
-  content: string;
-  published: boolean;
-  updated: boolean;
-  updated_at: string;
-  date: string;
-};
-
-const db: Post[] = [
-  {
-    id: 1,
-    name: "Brand new stack!",
-    type: "markdown",
-    content: "Hello World",
-    updated: true,
-    published: true,
-    updated_at: new Date().toLocaleString(),
-    date: new Date().toLocaleString(),
-  },
-  {
-    id: 2,
-    name: "Brand new site",
-    type: "markdown",
-    content: "Hello World",
-    published: false,
-    updated: false,
-    updated_at: "",
-    date: new Date().toLocaleString(),
-  },
-];
 
 const PORT = 3000;
 const app = new Elysia().use(html()).use(staticPlugin()).use(swagger());
