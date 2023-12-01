@@ -1,53 +1,16 @@
 import * as elements from "typed-html";
 import file from "fs";
 const list_of_icon_files = file.readdirSync("./public/icons");
-const list_of_icon_names = list_of_icon_files.map((file) => {
+export const list_of_icon_names = list_of_icon_files.map((file) => {
   return file.split(".")[0];
 });
-const tabs = [
-  {
-    name: "home.md",
-    type: "markdown",
-  },
-  {
-    name: "latest_post.md",
-    type: "markdown",
-  },
-  {
-    name: "about_me.md",
-    type: "markdown",
-  },
-  {
-    name: "blog",
-    type: "directory",
-  },
-  {
-    name: "about",
-    type: "directory",
-  },
-  {
-    name: "contact",
-    type: "directory",
-  },
-  {
-    name: "projects",
-    type: "directory",
-  },
-  {
-    name: "resume",
-    type: "directory",
-  },
-  {
-    name: "static",
-    type: "directory",
-  },
-  // "latest_post.md",
-  // "about_me.md"
-];
+
+import { posts } from "../db/db";
+
 export const Tabs = () => {
   return (
     <ul class="flex flex-row space-x-1 py-1 bg-[#141a3b]  border-b-2 border-b-indigo-500/50 text-white">
-      {tabs.map((page) => {
+      {posts.map((page) => {
         if (list_of_icon_names.includes(page.type)) {
           return (
             <li>

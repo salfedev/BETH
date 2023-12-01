@@ -23,37 +23,37 @@ const Template = ({ children }: elements.Children) => {
 
 type Post = {
   id: number;
-  title: string;
+  name: string;
+  type: string;
   content: string;
-  publisheed: boolean;
+  published: boolean;
+  updated: boolean;
+  updated_at: string;
   date: string;
 };
 
 const db: Post[] = [
   {
     id: 1,
-    title: "Brand new stack!",
+    name: "Brand new stack!",
+    type: "markdown",
     content: "Hello World",
-    publisheed: true,
+    updated: true,
+    published: true,
+    updated_at: new Date().toLocaleString(),
     date: new Date().toLocaleString(),
   },
   {
     id: 2,
-    title: "Brand new site",
+    name: "Brand new site",
+    type: "markdown",
     content: "Hello World",
-    publisheed: true,
+    published: false,
+    updated: false,
+    updated_at: "",
     date: new Date().toLocaleString(),
   },
 ];
-
-const PostItem = ({ post }: { post: Post }) => {
-  <div>
-    <h1>{post.title}</h1>
-    <p>{post.content}</p>
-    <p>{post.date}</p>
-    <p>{post.publisheed ? "Published" : "Not published"}</p>
-  </div>;
-};
 
 const PORT = 3000;
 const app = new Elysia().use(html()).use(staticPlugin()).use(swagger());
@@ -63,13 +63,13 @@ app.get("/", ({ html }) => {
     <Template>
       <body class="h-full">
         <Nav />
-        <HomePage />
+        <HomePage data={db}/>
       </body>
     </Template>
   );
 });
 
-app.post("/test", ({ html }) => {
+app.post("/post", ({ html }) => {
   return html(
     <Template>
       <body>
