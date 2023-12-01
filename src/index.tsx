@@ -8,6 +8,7 @@ import { Nav } from "./components/nav";
 import { HomePage } from "./templates/home";
 
 import { db } from "./db/db";
+import { Posts } from "./components/posts";
 
 const Template = ({ children }: elements.Children) => {
   return `
@@ -37,15 +38,7 @@ app.get("/", ({ html }) => {
   );
 });
 
-app.post("/post", ({ html }) => {
-  return html(
-    <Template>
-      <body>
-        <p>Clicked World!</p>
-      </body>
-    </Template>
-  );
-});
+app.get("/posts", () => <Posts posts={db}/>);
 
 app.listen(PORT);
 console.log(

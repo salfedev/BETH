@@ -2,6 +2,7 @@
 type Post = {
   id: number;
   name: string;
+  title: string;
   type: string;
   content: string;
   published: boolean;
@@ -13,11 +14,25 @@ type Post = {
 export const posts = [
   {
     name: "home.md",
+    title: "Hello World",
     type: "markdown",
-    content: `# Hello World!\n
-      For the longest time, I held onto my domain and email server without much thought of creating a working website. The motivation simply wasn't there.\n
-      However, things have changed recently, and I've found myself with compelling reasons to dive into this endeavor. I needed an online presence, a digital space to document my journey, projects, and a playground for experimentation. This won't be just another static resume platform; it's meant to be genuinely useful, like a personal file-sharing service, for example.\n
-      Now, a website feels like the practical and appealing answer to these evolving needs.
+    content: `
+    For the longest time, I held onto my domain and email server without much thought of creating a working website.
+    The motivation simply wasn't there.
+    However, things have changed recently, and I've found myself with compelling reasons to dive into this endeavor.
+    I needed an online presence, a digital space to document my journey, projects, and a playground for experimentation. This won't be just another static
+    resume site! it's meant to be genuinely useful, and expandable and I can use it for stuff like deploying a personal file-sharing service, for example.
+
+    As my dissatisfaction with social media addiction grew, I realized my true affinity for occasional journaling and documenting, reminiscent of the golden days of blogging
+    platforms like WordPress and Blogger, so why not build a blog too?
+
+    Now, a website feels like the practical and appealing answer to these evolving needs.
+
+    There's one more hurdle that's always tripped me up: design!
+    Oddly enough, I'm fairly adept at crafting interfaces, but it becomes a stumbling block. I tend to procrastinate excessively when it comes to design, expending considerable
+    effort in pursuit of perfection. This time, I'm determined to break free from that cycle.
+
+    I won't dwell on aesthetics. I'll embrace the first design that delivers the functionality I need without a moment's hesitation!.
     `,
     id: 1,
     updated: true,
@@ -27,7 +42,9 @@ export const posts = [
   },
   {
     name: "latest_post.md",
+    title: "Latest Post",
     type: "markdown",
+    content: "glksdhgklskgs;r",
     id: 2,
     updated: true,
     published: true,
@@ -36,7 +53,9 @@ export const posts = [
   },
   {
     name: "about_me.md",
+    title: "About Me",
     type: "markdown",
+    content: "dhdjtjtjwtrjtrjtjtj",
     id: 3,
     updated: true,
     published: true,
@@ -46,6 +65,7 @@ export const posts = [
   {
     name: "blog",
     type: "directory",
+    content: "jfgdjfdjhdfjfjjfjfj",
     id: 4,
     updated: true,
     published: true,
@@ -74,6 +94,7 @@ export const posts = [
   // },
   {
     name: "file_sharing.js",
+    title: "Simple personal file sharing",
     type: "javascript",
     content: `import * as elements from "typed-html";`,
     id: 5,
@@ -82,8 +103,6 @@ export const posts = [
     updated_at: new Date().toLocaleString(),
     date: new Date().toLocaleString(),
   },
-  // "latest_post.md",
-  // "about_me.md"
 ];
 
 // export const list_of_icon_files = file.readdirSync("../../../public/icons");
@@ -93,25 +112,4 @@ export const posts = [
 // });
 
 
-export const db: Post[] = [
-  {
-    id: 1,
-    name: "Brand new stack!",
-    type: "markdown",
-    content: "Hello World",
-    updated: true,
-    published: true,
-    updated_at: new Date().toLocaleString(),
-    date: new Date().toLocaleString(),
-  },
-  {
-    id: 2,
-    name: "Brand new site",
-    type: "markdown",
-    content: "Hello World",
-    published: false,
-    updated: false,
-    updated_at: "",
-    date: new Date().toLocaleString(),
-  },
-];
+export const db: Post[] = posts;
