@@ -53,7 +53,7 @@ export const Tabs = () => {
             <li>
               <a
                 href={page.name}
-                class="hover:bg-slate-500 text-orange-400 text-sm py-1 px-5  border-r-2 border-r-black"
+                class="hover:bg-slate-500 text-orange-400 text-sm py-2 px-5  border-r-2 border-r-black"
               >
                 <img
                   src={`/public/icons/${page.type}.svg`}
@@ -64,14 +64,6 @@ export const Tabs = () => {
             </li>
           );
         }
-        // return (
-        //   <a
-        //     href={page}
-        //     class="hover:bg-slate-500 text-orange-400 text-sm py-1 px-10  border-r-2 border-r-black"
-        //   >
-        //     {page}
-        //   </a>
-        // );
       })}
     </div>
   );
