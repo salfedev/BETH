@@ -46,7 +46,7 @@ const tabs = [
 ];
 export const Tabs = () => {
   return (
-    <div class="flex flex-row space-x-1 py-1 bg-[#141a3b]  border-b-2 border-b-indigo-500/50 text-white">
+    <ul class="flex flex-row space-x-1 py-1 bg-[#141a3b]  border-b-2 border-b-indigo-500/50 text-white">
       {tabs.map((page) => {
         if (list_of_icon_names.includes(page.type)) {
           return (
@@ -65,6 +65,6 @@ export const Tabs = () => {
           );
         }
       })}
-    </div>
+    </ul>
   );
 };

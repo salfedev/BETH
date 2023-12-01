@@ -31,7 +31,6 @@ export const Nav = () => {
       src="/public/vscode.png"
       class="h-8 w-8 p-2" />
       {pages.map((page) => {
-        // const isActive = window.location.pathname === page.path;
         return (
           <a
             id={page.path}
