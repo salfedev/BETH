@@ -4,8 +4,8 @@ export default {
   schema: "./src/db/schema.ts",
   driver: "turso",
   dbCredentials: {
-    url: process.env.TURSO_DB_URL!,
-    authToken: process.env.TURSO_API_TOKEN!,
+    url: process.env.DATABASE_URL!,
+    authToken: process.env.DATABASE_AUTH_TOKEN!,
   },
   verbose: true,
   strict: true,

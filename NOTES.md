@@ -1,0 +1,1 @@
+* Apparently installing drizzle-orm and @libsql/client with bun breaks things, those had to be installed with npm.
