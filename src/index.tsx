@@ -15,6 +15,9 @@ import { db } from "./db/db";
 
 // import { Posts } from "./components/posts";
 
+// logger
+import { green, red } from "./utils/logger"
+
 const Template = ({ children }: elements.Children) => {
   return `
         <html>
@@ -23,6 +26,7 @@ const Template = ({ children }: elements.Children) => {
                 <script src="https://unpkg.com/htmx.org@1.9.3" integrity="sha384-lVb3Rd/Ca0AxaoZg5sACe8FJKF0tnUgR2Kd7ehUOG5GCcROv5uBIZsOqovBAcWua" crossorigin="anonymous"></script>
                 <script src="https://cdn.tailwindcss.com"></script>
                 <script src="https://unpkg.com/hyperscript.org@0.9.9"></script>
+                <style type="text/css" src="/public/index.css"></style>
             </head>
             ${children}
         </html>
@@ -33,20 +37,32 @@ const PORT = 3000;
 const app = new Elysia().use(html()).use(staticPlugin()).use(swagger());
 
 app.get("/", async ({ html }) => {
+  green("GET /");
   // console.log(db, "db");
   return html(
     <Template>
       <body>
-        <div class="h-full">
+        <div class="h-screen">
           <Nav />
-          <HomePage data={db} />
+          {/* load home */}
+          <div hx-get="/home" hx-swap="innerHTML" hx-trigger="load"></div>
+          {/* <HomePage data={db} /> */}
         </div>            
       </body>
     </Template>
   );
 });
 
+app.get("/home", async ({ html }) => {
+  green("GET /home");
+  // console.log(db, "db");
+  return html(
+    <HomePage data={db} />
+  );
+})
+
 app.get("/latest-post", async ({ html }) => {
+  green("GET /latest-post");
   // console.log(db, "db");
   // const data = await db.select().from(posts).all();
   const content = await markdownToHtml(String(db[0].content));
