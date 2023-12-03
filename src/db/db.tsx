@@ -20,7 +20,7 @@ export const posts = [
 # Hello World!
 For about 10 years, I held onto my domain name and email server without much thought of creating a working website. The motivation simply wasn't there.
 
-I had a need for personal email but couldn't justify spending the time on building a website. I couldn't stomach using an 'off-the-shelf' solution! After all, I'm a software engineer, right?
+I had a need for personal email but couldn't justify spending the time on building a website. I couldn't stomach using an 'off-the-shelf' solution either! After all, I'm a software engineer, right?
 
 However, things have changed recently, and I've found myself with really compelling reasons to dive into this endeavour. I needed an online presence! More importantly, I needed a digital space to document my learning, projects, and a playground for experimentation. This won't be just another static shrine for my CV where no one would ever care to view it. It's meant to be genuinely useful. I could host a personal file-sharing service or keep my notes safe instead of paying Google to go through them for ads. As my dissatisfaction with social media addiction grew, I realized my true affinity is for occasional journaling and documenting, reminiscent of the golden days of blogging platforms like WordPress and Blogger. I don't care about having an audience, so adding a blog to my new website makes total sense.
 
