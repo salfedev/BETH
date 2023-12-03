@@ -1,1 +1,1 @@
-* Apparently installing drizzle-orm and @libsql/client with bun breaks things, those had to be installed with npm.
+* Apparently installing drizzle-orm and @libsql/client with bun breaks things, those had to be installed with npm: https://www.answeroverflow.com/m/1152657194832101406.

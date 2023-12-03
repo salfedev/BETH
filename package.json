@@ -10,6 +10,7 @@
     "db:studio": "bunx drizzle-kit studio"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "latest",
     "bun-types": "latest",
     "drizzle-kit": "^0.20.6",
     "typed-html": "^3.0.1"
@@ -21,9 +22,13 @@
     "@elysiajs/html": "^0.7.3",
     "@elysiajs/static": "^0.7.1",
     "@elysiajs/swagger": "^0.7.4",
-    "@libsql/client": "^0.4.0-pre.5",
+    "@libsql/client": "^0.3.1",
     "drizzle-orm": "^0.29.1",
     "elysia": "^0.7.29",
-    "node-color-log": "^11.0.0"
+    "node-color-log": "^11.0.0",
+    "rehype-stringify": "^10.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.0.0",
+    "unified": "^11.0.4"
   }
 }
