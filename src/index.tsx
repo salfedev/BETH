@@ -46,7 +46,6 @@ app.get("/", async ({ html }) => {
           <Nav />
           {/* load home */}
           <div hx-get="/home" hx-swap="innerHTML" hx-trigger="load"></div>
-          {/* <HomePage data={db} /> */}
         </div>            
       </body>
     </Template>
@@ -69,7 +68,7 @@ app.get("/latest-post", async ({ html }) => {
   // console.log('---------------------------------------------------------')
   // console.log('content: ', content)
   return (
-    <PostItem post={{content}} />
+    <PostItem post={{...db[0], content}} />
   )
 });
 

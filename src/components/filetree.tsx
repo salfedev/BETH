@@ -3,7 +3,7 @@ import { posts } from "../db/db";
 import { list_of_icon_names } from "./tabs";
 export const FileTree = () => {
   return (
-    <div class="w-64 h-full border-r-2 border-r-indigo-500/50 bg-[#0f142e] p-1">
+    <div class="w-64 border-r-2 border-r-indigo-500/50 bg-[#0f142e] p-1">
       {/* &gt;<span class="text-blue-200 text-sm font-extrabold">  File Tree</span> */}
       &#9660;
       <span class="text-blue-200 text-sm font-extrabold"> File Tree</span>
